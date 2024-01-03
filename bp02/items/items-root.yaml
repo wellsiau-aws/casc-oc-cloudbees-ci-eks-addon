@@ -1,0 +1,23 @@
+removeStrategy:
+  rbac: SYNC
+  items: NONE
+items:
+  - kind: managedController
+    name: team-a
+    configuration:
+      kubernetes:
+        memory: 2048
+        cpus: 1.0
+        disk: 20
+        storageClassName: "gp3"
+  - kind: managedController
+    name: team-b
+    configuration:
+      kubernetes:
+        memory: 6144
+        cpus: 4.0
+        disk: 5
+        storageClassName: "gp3"
+    properties:
+      - configurationAsCode:
+          bundle: "main/bp02.team-b"
