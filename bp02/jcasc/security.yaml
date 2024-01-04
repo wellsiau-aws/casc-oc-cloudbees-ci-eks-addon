@@ -4,11 +4,11 @@ jenkins:
       allowsSignup: false
       users:
         - id: "admin"
-          password: ${jenkinsPass}
+          password: ${secJenkinsPass}
         - id: "developer"
-          password: ${jenkinsPass}
+          password: ${secJenkinsPass}
         - id: "guest"
-          password: ${jenkinsPass}
+          password: ${secJenkinsPass}
   authorizationStrategy: "cloudBeesRoleBasedAccessControl"
   remotingSecurity:
     enabled: true
