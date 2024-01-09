@@ -36,7 +36,7 @@ beekeeper:
     autoUpgradePlugins: true
 masterprovisioning:
   kubernetes:
-    nodeSelectors: "ci_type=cb-apps"
+    nodeSelectors: "ci_type=cb-apps-1az"
     yaml: |-
       ---
       apiVersion: apps/v1
@@ -47,5 +47,5 @@ masterprovisioning:
             tolerations:
               - key: "dedicated"
                 operator: "Equal"
-                value: "cb-apps"
+                value: "cb-apps-1az"
                 effect: "NoSchedule"
