@@ -36,6 +36,7 @@ items:
             maxReplicas: 4
             replicas: 2
             targetCPUUtilizationPercentage: 50
+        nodeSelectors: "ci_type=cb-apps"
         yaml: |-
           ---
           apiVersion: apps/v1
