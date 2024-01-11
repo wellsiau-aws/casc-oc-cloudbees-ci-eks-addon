@@ -49,13 +49,13 @@ items:
                     operator: "Equal"
                     value: "cb-apps"
                     effect: "NoSchedule"
-          service:
+          ---
           apiVersion: "v1"
           kind: "Service"
           metadata:
             labels:
               # It requires to be installed CloudBees CI Prometheus plugin
-              operated.prometheus: "true"              
+              operated.prometheus: "true"           
     properties:
       - configurationAsCode:
           bundle: "main/bp02.team-b"
