@@ -20,10 +20,7 @@ items:
         cpus: 2.0
         disk: 5
         storageClassName: "gp3"
-    properties:
-      - configurationAsCode:
-          bundle: "main/bp02.team-b"
-          yaml: |-
+        yaml: |-
             ---
             apiVersion: "v1"
             kind: "Service"
@@ -31,6 +28,9 @@ items:
               labels:
                 # It requires to be installed CloudBees CI Prometheus plugin
                 operated.prometheus: "true"
+    properties:
+      - configurationAsCode:
+          bundle: "main/bp02.team-b"
   # Casc, HA    
   - kind: managedController
     name: team-c-ha
