@@ -3,14 +3,14 @@ removeStrategy:
   items: NONE
 items:
   # Non-Casc
-  # - kind: managedController
-  #   name: team-a
-  #   configuration:
-  #     kubernetes:
-  #       memory: 2048
-  #       cpus: 1.0
-  #       disk: 20
-  #       storageClassName: "gp3"
+  - kind: managedController
+    name: team-a
+    configuration:
+      kubernetes:
+        memory: 2048
+        cpus: 1.0
+        disk: 20
+        storageClassName: "gp3"
   # Casc, Non-HA
   - kind: managedController
     name: team-b

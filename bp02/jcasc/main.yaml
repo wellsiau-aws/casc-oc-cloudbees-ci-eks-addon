@@ -49,3 +49,9 @@ masterprovisioning:
                 operator: "Equal"
                 value: "cb-apps-1az"
                 effect: "NoSchedule"
+      service:
+      apiVersion: "v1"
+      kind: "Service"
+      metadata:
+        labels:
+          operated-prometheus: "true"
