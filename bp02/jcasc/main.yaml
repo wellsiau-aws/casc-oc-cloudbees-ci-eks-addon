@@ -54,4 +54,5 @@ masterprovisioning:
       kind: "Service"
       metadata:
         labels:
-          operated-prometheus: "true"
+          # It requires to be installed CloudBees CI Prometheus plugin
+          operated.prometheus: "true"
