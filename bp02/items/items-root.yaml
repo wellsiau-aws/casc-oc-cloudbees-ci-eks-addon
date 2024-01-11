@@ -21,6 +21,17 @@ items:
         disk: 5
         storageClassName: "gp3"
         yaml: |-
+          ---
+          apiVersion: apps/v1
+          kind: StatefulSet
+          spec:
+            template:
+              spec:
+                tolerations:
+                  - key: "dedicated"
+                    operator: "Equal"
+                    value: "cb-apps-1az"
+                    effect: "NoSchedule"
             ---
             apiVersion: "v1"
             kind: "Service"
