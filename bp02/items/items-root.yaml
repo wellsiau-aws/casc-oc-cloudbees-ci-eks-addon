@@ -23,6 +23,14 @@ items:
     properties:
       - configurationAsCode:
           bundle: "main/bp02.team-b"
+          yaml: |-
+            ---
+            apiVersion: "v1"
+            kind: "Service"
+            metadata:
+              labels:
+                # It requires to be installed CloudBees CI Prometheus plugin
+                operated.prometheus: "true"
   # Casc, HA    
   - kind: managedController
     name: team-c-ha
