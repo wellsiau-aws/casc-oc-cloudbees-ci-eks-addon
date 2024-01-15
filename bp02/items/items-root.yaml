@@ -41,7 +41,7 @@ items:
               operated.prometheus: "true"
     properties:
       - configurationAsCode:
-          bundle: "main/bp02.team-b"
+          bundle: "main/bp02.none-ha"
   # Casc, HA    
   - kind: managedController
     name: team-c-ha
@@ -77,4 +77,4 @@ items:
               operated.prometheus: "true"           
     properties:
       - configurationAsCode:
-          bundle: "main/bp02.team-b"
+          bundle: "main/bp02.ha"
