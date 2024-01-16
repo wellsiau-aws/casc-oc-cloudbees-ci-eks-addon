@@ -10,7 +10,6 @@ unclassified:
           defaultVersion: "main"
           scmSource:
             git:
-              credentialsId: "GH-token"
               remote: ${scm_casc_mm_store}
               traits:
                 - "gitBranchDiscovery"
@@ -24,7 +23,7 @@ unclassified:
             logRotator:
               numToKeepStr: "3"
 cloudBeesCasCServer:
-  defaultBundle: "modern.good-boy"
+  defaultBundle: "bp02.none-ha"
   visibility: true
 beekeeper:
   enabled: true
