@@ -1,5 +1,3 @@
 variables:
   - message: "Welcome to the CloudBees CI on EKS Add-on using Blueprint 02!"
-  #TODO: Remove by passing it as secret
-  - jenkinsPass: "thisShouldBeASecret"
   - scm_casc_mm_store: "https://github.com/cloudbees/casc-mm-cloudbees-ci-eks-addon"
