@@ -30,7 +30,7 @@ items:
                 tolerations:
                   - key: "dedicated"
                     operator: "Equal"
-                    value: "cb-apps-1az"
+                    value: "cb-apps"
                     effect: "NoSchedule"
           ---
           apiVersion: "v1"
