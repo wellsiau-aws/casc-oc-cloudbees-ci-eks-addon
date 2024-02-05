@@ -56,3 +56,36 @@ items:
                 - isMasterOnlineFilter: {}
               inParallel: 1
               noRetries: 0
+      - kind: clusterOpProject
+        name: backup-all-controllers
+        operations:
+          - managedMasterClusterOperation:
+              failureMode: IMMEDIATELY
+              clusterOpSteps:
+              - backupClusterOpStep:
+                  subjects:
+                  - buildRecordSubject: {
+                      }
+                  - jobConfigurationSubject: {
+                      }
+                  - systemConfigurationSubject:
+                      omitMasterKey: false
+                  format:
+                    zipFormat: {
+                      }
+                  retentionPolicy:
+                    noRetentionPolicy: {
+                      }
+                  safeDelaySeconds: 0
+                  store:
+                    s3Store:
+                      bucketName: ${cbci_s3}
+                      bucketFolder: cbci/backup
+                      region: us-east-1
+              itemSource:
+                jenkinsRootItemSource: {
+                  }
+              filters:
+              - isMasterOnlineFilter: {
+                  }
+

@@ -20,28 +20,9 @@ items:
         cpus: 2.0
         disk: 5
         storageClassName: "gp3"
-        yaml: |-
-          ---
-          apiVersion: apps/v1
-          kind: StatefulSet
-          spec:
-            template:
-              spec:
-                tolerations:
-                  - key: "dedicated"
-                    operator: "Equal"
-                    value: "cb-apps"
-                    effect: "NoSchedule"
-          ---
-          apiVersion: "v1"
-          kind: "Service"
-          metadata:
-            labels:
-              # Prometheus Service Discovery
-              operated.prometheus: "true"
     properties:
       - configurationAsCode:
-          bundle: "main/bp02.none-ha"
+          bundle: "main/bp02.team-b"
   # Casc, HA    
   - kind: managedController
     name: team-c-ha
@@ -67,14 +48,7 @@ items:
                   - key: "dedicated"
                     operator: "Equal"
                     value: "cb-apps"
-                    effect: "NoSchedule"
-          ---
-          apiVersion: "v1"
-          kind: "Service"
-          metadata:
-            labels:
-              # Prometheus Service Discovery
-              operated.prometheus: "true"           
+                    effect: "NoSchedule"    
     properties:
       - configurationAsCode:
-          bundle: "main/bp02.ha"
+          bundle: "main/bp02.team-b"

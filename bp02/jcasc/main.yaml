@@ -10,6 +10,7 @@ unclassified:
           defaultVersion: "main"
           scmSource:
             git:
+              credentialsId: "GH-token"
               remote: ${scm_casc_mm_store}
               traits:
                 - "gitBranchDiscovery"
@@ -23,7 +24,7 @@ unclassified:
             logRotator:
               numToKeepStr: "3"
 cloudBeesCasCServer:
-  defaultBundle: "bp02.none-ha"
+  defaultBundle: "modern.good-boy"
   visibility: true
 beekeeper:
   enabled: true
@@ -35,7 +36,7 @@ beekeeper:
     autoUpgradePlugins: true
 masterprovisioning:
   kubernetes:
-    nodeSelectors: "ci_type=cb-apps"
+    nodeSelectors: "ci_type=cb-apps-1az"
     yaml: |-
       ---
       apiVersion: apps/v1
@@ -46,5 +47,12 @@ masterprovisioning:
             tolerations:
               - key: "dedicated"
                 operator: "Equal"
-                value: "cb-apps"
+                value: "cb-apps-1az"
                 effect: "NoSchedule"
+      service:
+      apiVersion: "v1"
+      kind: "Service"
+      metadata:
+        labels:
+          # It requires to be installed CloudBees CI Prometheus plugin
+          operated.prometheus: "true"
