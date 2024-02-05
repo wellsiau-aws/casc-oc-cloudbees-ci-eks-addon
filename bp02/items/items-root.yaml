@@ -49,6 +49,8 @@ items:
                     operator: "Equal"
                     value: "cb-apps"
                     effect: "NoSchedule"
+          ---
+          apiVersion: "v1"
           kind: "Service"
           metadata:
             labels:
