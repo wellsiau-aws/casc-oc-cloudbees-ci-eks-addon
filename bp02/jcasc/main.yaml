@@ -39,20 +39,18 @@ masterprovisioning:
     nodeSelectors: "ci_type=cb-apps"
     yaml: |-
       ---
-      apiVersion: apps/v1
-      kind: StatefulSet
+      apiVersion: "apps/v1"
+      kind: "StatefulSet"
       spec:
         template:
-          spec:
-            tolerations:
+            spec:
+              tolerations:
               - key: "dedicated"
                 operator: "Equal"
                 value: "cb-apps"
                 effect: "NoSchedule"
-      service:
       apiVersion: "v1"
       kind: "Service"
       metadata:
         labels:
-          # It requires to be installed CloudBees CI Prometheus plugin
           operated.prometheus: "true"
