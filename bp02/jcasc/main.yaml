@@ -1,5 +1,6 @@
 jenkins:
   systemMessage: ${message}
+  numExecutors: 0
 unclassified:
   bundleStorageService:
     activated: true
@@ -34,6 +35,10 @@ beekeeper:
   upgrades:
     autoDowngradePlugins: false
     autoUpgradePlugins: true
+security:
+  controllerExecutorCount:
+    enforce:
+      count: 0
 masterprovisioning:
   kubernetes:
     nodeSelectors: "ci_type=cb-apps"
