@@ -58,6 +58,9 @@ items:
               noRetries: 0
       - kind: clusterOpProject
         name: backup-all-controllers
+        triggers:
+        - cron:
+            spec: '@daily'
         operations:
           - managedMasterClusterOperation:
               failureMode: IMMEDIATELY
