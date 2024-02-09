@@ -20,6 +20,25 @@ items:
         cpus: 2.0
         disk: 5
         storageClassName: "gp3"
+      nodeSelectors: "ci_type=cb-apps"
+      yaml: |-
+        ---
+        apiVersion: apps/v1
+        kind: Deployment
+        spec:
+          template:
+            spec:
+              tolerations:
+                - key: "dedicated"
+                  operator: "Equal"
+                  value: "cb-apps"
+                  effect: "NoSchedule"
+        ---
+        apiVersion: "v1"
+        kind: "Service"
+        metadata:
+          labels:
+            operated.prometheus: "true"
     properties:
       - configurationAsCode:
           bundle: "main/bp02.none-ha"
