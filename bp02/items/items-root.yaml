@@ -20,7 +20,6 @@ items:
         cpus: 2.0
         disk: 5
         storageClassName: "gp3"
-      nodeSelectors: "ci_type=cb-apps"
       yaml: |-
         ---
         apiVersion: apps/v1
@@ -55,7 +54,6 @@ items:
             maxReplicas: 4
             replicas: 2
             targetCPUUtilizationPercentage: 50
-        nodeSelectors: "ci_type=cb-apps"
         yaml: |-
           ---
           apiVersion: apps/v1
