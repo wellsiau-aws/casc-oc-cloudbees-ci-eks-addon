@@ -24,7 +24,7 @@ items:
       yaml: |-
         ---
         apiVersion: apps/v1
-        kind: Deployment
+        kind: "StatefulSet"
         spec:
           template:
             spec:
